@@ -1,0 +1,78 @@
+.bg_add_product {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(https://thumbs.dreamstime.com/z/%D1%84%D0%BE%D0%BD-%D0%BF%D0%B8%D1%86%D1%86%D1%83-%D0%B0%D1%81%D1%81%D0%BE%D1%80%D1%82%D0%B8%D0%BC%D0%B5%D0%BD%D1%82-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B8%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0-%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-168102661.jpg);
+}
+.add_product {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
+}
+.add_product div {
+  margin: 40px;
+  position: relative;
+}
+.add_product input {
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  background-color: inherit;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.add_product input:focus {
+  outline: none;
+}
+.add_product label {
+  color: #999;
+  font-size: 28px;
+  pointer-events: none;
+  position: absolute;
+  transition: 0.2s ease all;
+}
+/* .add_product input:focus label {
+  top: -15px;
+  font-size: 14px;
+  color: #5264ae;
+} */
+.btn_add {
+  width: 140px;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: -1px -1px #000;
+  user-select: none;
+  padding: 0.8em 2em;
+  outline: none;
+  background-color: rgb(127, 194, 19);
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    ),
+    radial-gradient(
+      190% 100% at 50% 0%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(0, 0, 0, 0) 50%
+    );
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto;
+  background-position: 200% 0, 0 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+}
+.btn_add:hover {
+  transition: 0.5s linear;
+  background-position: -200% 0, 0 0;
+}
