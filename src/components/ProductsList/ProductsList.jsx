@@ -1,9 +1,10 @@
 import React from 'react';
 import ProductCard from './ProductCard/ProductCard';
+import './ProductList.css'
 
 const ProductsList = () => {
     return (
-        <div>
+        <div className='products_list'>
             <ProductCard/>
         </div>
     );

@@ -1,0 +1,25 @@
+.product_card {
+  width: 300px;
+  height: 500px;
+  border: 1px solid rgba(252, 185, 0, 0.5);
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: 1s;
+}
+.product_card:hover {
+  box-shadow: 1px 1px 40px black;
+}
+.pizza_size {
+  display: flex;
+  justify-content: space-evenly;
+}
+.pizza_price {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn_to_basket {
+  width: 100px;
+}
