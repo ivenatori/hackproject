@@ -7,11 +7,7 @@ import AddProduct from "./components/AddProduct/AddProduct";
 const App = () => {
   return (
     <div>
-      <PrimarySearchAppBar />
-
-      <ProductsList />
-
-      <AddProduct />
+      <MainRoutes />
     </div>
   );
 };
