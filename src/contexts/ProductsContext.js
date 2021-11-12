@@ -29,13 +29,21 @@ const ProductsContextProvider = ({ children }) => {
   };
   //добавление новой пиццы
   async function addNewProduct(newProduct) {
-    await axios(`http://localhost:8000/products`, newProduct);
+    await axios.post(`http://localhost:8000/products`, newProduct);
+    getProducts();
+  }
+  //удаление продукта
+  function deleteProduct(id) {
+    axios.delete(`http://localhost:8000/products/${id}`);
+    getProducts();
   }
   return (
     <productsContext.Provider
       value={{
+        products: state.products,
         getProducts,
         addNewProduct,
+        deleteProduct,
       }}
     >
       {children}
