@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useReducer } from "react";
 import axios from "axios";
 
 export const productsContext = createContext();
@@ -18,35 +18,29 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
   const getProducts = async () => {
-    const { data } = await axios(`http://localhost:8000/products?$`);
+    const { data } = await axios(`http://localhost:8000/products`);
 
     dispatch({
       type: "GET_PRODUCTS",
       payload: data,
     });
   };
+  //добавление новой пиццы
+  async function addNewProduct(newProduct) {
+    await axios(`http://localhost:8000/products`, newProduct);
+  }
+  return (
+    <productsContext.Provider
+      value={{
+        getProducts,
+        addNewProduct,
+      }}
+    >
+      {children}
+    </productsContext.Provider>
+  );
 };
-
-return (
-  <productsContext.Provider
-    value={{
-      products: state.products,
-      currentProduct: state.currentProduct,
-      getProducts,
-      getCurProduct,
-      getPageProducts,
-      paginateProducts: state.paginateProducts,
-      addToBasket,
-      cartLength: state.cartLength,
-      cart: state.cart,
-      cartProducts,
-      getProductsFromBasket,
-      changeProductCount,
-    }}
-  >
-    {children}
-  </productsContext.Provider>
-);
 
 export default ProductsContextProvider;
