@@ -15,6 +15,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { useAuth } from '../../contexts/AuthContext'
+import { Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Search = styled('div')(({ theme }) => ({
@@ -58,6 +61,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+    const {
+        handleLogOut,
+        user: { email },
+      } = useAuth()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -225,6 +232,24 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          {email ? (
+            <Link to="/auth">
+              <Button
+                variant="contained"
+                disableElevation
+                onClick={handleLogOut}
+              >
+                Log out
+              </Button>
+            </Link>
+          ) : null}
+          {email ? null : (
+            <Link to="/auth">
+              <Button variant="contained" disableElevation>
+                Log In
+              </Button>
+            </Link>
+          )}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
