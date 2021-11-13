@@ -2,11 +2,11 @@ import React from "react";
 import ProductsList from "./components/ProductsList/ProductsList";
 import MainRoutes from "./MainRoutes";
 import PrimarySearchAppBar from "./components/Header/Header";
-import AddProduct from "./components/AddProduct/AddProduct";
+import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <MainRoutes />
     </div>
   );
