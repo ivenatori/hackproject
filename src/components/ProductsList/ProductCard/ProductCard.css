@@ -1,14 +1,15 @@
 .product_card {
-  width: 300px;
+  width: 350px;
   height: 500px;
   color: rgb(51, 51, 51);
   border-radius: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   transition: 1s;
   box-shadow: 1px 1px 10px black;
+  margin-bottom: 50px;
 }
 .product_card img {
   border-radius: 30px;
