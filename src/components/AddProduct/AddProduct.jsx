@@ -16,10 +16,10 @@ const AddProduct = () => {
         <div className='add_product '>
             <div><input onChange={(e)=>setProduct({...product,product: e.target.value})} list='data' type="text" />
             <datalist id='data'>
-                <option value="pizza"></option>
-                <option value="sushi"></option>
-                <option value="drinks"></option>
-                <option value="sous"></option>
+                <option value="пицца"></option>
+                <option value="роллы"></option>
+                <option value="напитки"></option>
+                <option value="соусы"></option>
                 <option value=""></option>
                 <option value=""></option>
             </datalist>

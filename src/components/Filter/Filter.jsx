@@ -20,10 +20,10 @@ const Filter = () => {
             <div className='container'>
                     <div className='filter_menu'>
                         <ul className='filter_menu-flex'>
-                            <li onClick={(e)=>handleFilter('pizza')}>пиццы</li>
-                            <li onClick={(e)=>handleFilter('sushi')}>роллы</li>
-                            <li onClick={(e)=>handleFilter('drinks')}>напитки</li>
-                            <li onClick={(e)=>handleFilter('sous')}>4 соусы</li>
+                            <li onClick={(e)=>handleFilter('пицца')}>пиццы</li>
+                            <li onClick={(e)=>handleFilter('роллы')}>роллы</li>
+                            <li onClick={(e)=>handleFilter('напитки')}>напитки</li>
+                            <li onClick={(e)=>handleFilter('соусы')}>соусы</li>
                             <li onClick={(e)=>handleFilter()}>ntcn</li>
                             <li onClick={(e)=>handleFilter()}>ntct</li>
                         </ul>

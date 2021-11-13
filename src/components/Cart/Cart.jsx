@@ -2,8 +2,10 @@ import React from 'react';
 
 const Cart = () => {
     return (
-        <div>
-            
+        <div className='cart'>
+            <div><img src="" alt="" /></div>
+            <div></div>
+            <div></div>
         </div>
     );
 };
