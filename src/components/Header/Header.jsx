@@ -18,7 +18,10 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { useAuth } from '../../contexts/AuthContext'
 import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { productsContext } from '../../contexts/ProductsContext'
 import './Header.css'
+import history from '../../helpers/history'
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -61,6 +64,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  const [searchValue, setSearchValue] = React.useState('')
+  const { getProducts, cartLength } = React.useContext(productsContext)
+
+  function handleValue(e) {
+    const search = new URLSearchParams(history.location.search)
+    search.set('q', e.target.value)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+    setSearchValue(e.target.value)
+    getProducts(search.toString())
+  }
     const {
         handleLogOut,
         user: { email },
@@ -183,12 +196,12 @@ export default function PrimarySearchAppBar() {
           >
             MPizza
           </Typography>
-          <Search>
+          <Search onChange={handleValue} value={searchValue}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Найти пиццу"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
