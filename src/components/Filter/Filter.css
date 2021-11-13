@@ -1,3 +1,6 @@
+.filter {
+  padding: 10px;
+}
 .filter_menu-flex {
   padding: 0;
   display: flex;
@@ -11,7 +14,7 @@
   width: 20%;
   box-sizing: border-box;
   cursor: pointer;
-  /* border: 1px solid dodgerblue; */
+  border: 1px solid rgb(30, 255, 131);
   border-radius: 30px;
   font-family: sans-serif;
   font-size: 1.2em;

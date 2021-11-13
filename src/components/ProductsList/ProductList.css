@@ -1,6 +1,6 @@
 .products_list {
   width: 100%;
-
+  padding-top: 40px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
