@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { productsContext } from '../../../contexts/ProductsContext';
 import './ProductCard.css'
 
 const ProductCard = ({elem}) => {
     const {deleteProduct} = useContext(productsContext)
+    const [priceSize,setPriceSize] = useState(false)
+    
     console.log(elem)
     return (
         <div className='product_card'>
@@ -11,14 +13,20 @@ const ProductCard = ({elem}) => {
             <div className='pizza_name'><h2>{elem.Pname}</h2></div>
             <div className='pizza_about'>{elem.about}</div>
             <div className='pizza_size'>
-                <button>large</button><button>small</button>
+                <button onClick={(e)=>setPriceSize(true)}
+                style={{backgroundColor: priceSize?'#fff':''}}
+                >large</button>
+                <button onClick={(e)=>setPriceSize(false)}
+                style={{backgroundColor: priceSize?'':'#fff'}}
+                >small</button>
             </div>
             
             <div className='pizza_price'>
                 <button className='btn_to_basket'>в корзину</button>
-                <span className='product_price'>{elem.priceLarge}</span>
-            </div>
+                <span className='product_price'>{priceSize?`${elem.priceLarge}`:`${elem.priceSmall}`}</span>
+                </div>
           <div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button></div>
+  
         </div>
     );
 };
