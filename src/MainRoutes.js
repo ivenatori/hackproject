@@ -9,6 +9,7 @@ import ProductsList from "./components/ProductsList/ProductsList";
 import ProductsContextProvider from "./contexts/ProductsContext";
 import Auth from "./components/Auth/Auth";
 import EditProducts from "./components/EditProduct/EditProducts";
+import Filter from "./components/Filter/Filter";
 
 const MainRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const MainRoutes = () => {
             <Route path="/add" element={<AddProduct />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/edit" element={<EditProducts />} />
+            <Route path="/filter" element={<Filter />} />
           </Routes>
         </BrowserRouter>
       </ProductsContextProvider>
