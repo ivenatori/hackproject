@@ -64,7 +64,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   const [searchValue, setSearchValue] = React.useState('')
-  const { getProducts, cartLength } = React.useContext(productsContext)
+  const { getProducts, cartLength ,getProductsFromBasket} = React.useContext(productsContext)
 
   function handleValue(e) {
     const search = new URLSearchParams(history.location.search)
@@ -207,7 +207,7 @@ export default function PrimarySearchAppBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={cartLength} color="error">
               <AddShoppingCartIcon/>
               </Badge>
             </IconButton>
