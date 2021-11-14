@@ -8,8 +8,9 @@ const EditProducts = ({elem,openModal,setOpenModal}) => {
 
 
     function editProduct(elem){
+        setOpenModal(!openModal)
     setEditedProduct({...editedProduct,id: elem.id})
-    console.log(editedProduct)
+    // console.log(editedProduct)
     saveEditedProduct(editedProduct,elem.id)
     // document.querySelector('body').style.overflow='hidden'
     }
