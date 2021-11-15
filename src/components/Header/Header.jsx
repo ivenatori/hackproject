@@ -170,7 +170,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box id='header' sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: '#2E3B55' }}>
         <Toolbar>
           <IconButton

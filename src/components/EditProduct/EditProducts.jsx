@@ -22,10 +22,10 @@ const EditProducts = ({elem,openModal,setOpenModal}) => {
         <div className='edit_product '>
         <div><input placeholder='выбрать товар' onChange={(e)=>setEditedProduct({...editedProduct,product: e.target.value})} list='data' type="text" />
             <datalist id='data'>
-                <option value="пицца"></option>
-                <option value="роллы"></option>
-                <option value="напитки"></option>
-                <option value="соусы"></option>
+                <option value="pizza"></option>
+                <option value="sushi"></option>
+                <option value="drinks"></option>
+                <option value="sous"></option>
                 <option value=""></option>
                 <option value=""></option>
             </datalist>

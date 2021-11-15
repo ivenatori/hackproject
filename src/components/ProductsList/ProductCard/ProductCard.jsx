@@ -21,10 +21,10 @@ const ProductCard = ({elem}) => {
             <div className='pizza_size'>
                 <button onClick={(e)=>setPriceSize(true)}
                 style={{backgroundColor: priceSize?'#fff':''}}
-                >large</button>
+                >{elem.product==='drinks'?'1.5 л':'large'}</button>
                 <button onClick={(e)=>setPriceSize(false)}
                 style={{backgroundColor: priceSize?'':'#fff'}}
-                >small</button>
+                >{elem.product==='drinks'?'1 л':'small'}</button>
             </div>
             
             <div className='pizza_price'>

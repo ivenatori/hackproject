@@ -7,25 +7,25 @@ import './Filter.css'
 const Filter = () => {
     const {getProducts} = useContext(productsContext)
 
-    function handleFilter(e) {
-        console.log(e)
-        const search = new URLSearchParams(history.location.search)
-        search.set('product', e)
-        history.push(`${history.location.pathname}?${search.toString()}`)
+    // function handleFilter(e) {
+    //     console.log(e)
+    //     const search = new URLSearchParams(history.location.search)
+    //     search.set('product', e)
+    //     history.push(`${history.location.pathname}?${search.toString()}`)
  
-        getProducts(search.toString())
-      }
+    //     getProducts(search.toString())
+    //   }
     return (
         <div className='filter'>
             <div className='container'>
                     <div className='filter_menu'>
                         <ul className='filter_menu-flex'>
-                            <li onClick={(e)=>handleFilter('пицца')}>пиццы</li>
-                            <li onClick={(e)=>handleFilter('роллы')}>роллы</li>
-                            <li onClick={(e)=>handleFilter('напитки')}>напитки</li>
-                            <li onClick={(e)=>handleFilter('соусы')}>соусы</li>
-                            <li onClick={(e)=>handleFilter()}>ntcn</li>
-                            <li onClick={(e)=>handleFilter()}>ntct</li>
+                            <a href='#пицца'><li>пиццы</li></a>
+                            <a href='#роллы'><li>роллы</li></a>
+                            <a href='#напитки'><li>напитки</li></a>
+                            <a href='#соусы'><li>соусы</li></a>
+                            <li>ntcn</li>
+                            <li>ntct</li>
                         </ul>
                     </div>
             </div>

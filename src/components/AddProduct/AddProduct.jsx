@@ -16,10 +16,10 @@ const AddProduct = () => {
         <div className='add_product '>
             <div><input onChange={(e)=>setProduct({...product,product: e.target.value})} list='data' type="text" />
             <datalist id='data'>
-                <option value="пицца"></option>
-                <option value="роллы"></option>
-                <option value="напитки"></option>
-                <option value="соусы"></option>
+                <option value="pizza"></option>
+                <option value="sushi"></option>
+                <option value="drinks"></option>
+                <option value="sous"></option>
                 <option value=""></option>
                 <option value=""></option>
             </datalist>
@@ -29,7 +29,7 @@ const AddProduct = () => {
             <div><input onChange={(e)=>setProduct({...product,about: e.target.value})} type="text" /><label>about</label></div>
             <div><input onChange={(e)=>setProduct({...product,priceSmall: e.target.value})} type="text" /><label>price small</label></div>
             <div><input onChange={(e)=>setProduct({...product,priceLarge: e.target.value})} type="text" /><label>price large</label></div>
-            <button className='btn_add' onClick={addProduct}>add</button>  
+            <button className='btn_add' onClick={()=>addProduct()}>add</button>  
         </div>
         </div>
         </div>
