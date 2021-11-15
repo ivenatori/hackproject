@@ -14,5 +14,8 @@ body {
   box-sizing: border-box;
 }
 .App {
-  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-size: contain;
+  background-origin: content-box;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSJnb8_NX17OvAwimjyj0ZXJaiMhdIIV-VkA&usqp=CAU);
 }
