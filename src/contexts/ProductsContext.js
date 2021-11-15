@@ -1,7 +1,9 @@
 import React, { createContext, useReducer } from "react";
 import axios from "axios";
 import {
-  calcSubPrice,
+  // calcSubPrice,
+  calcSubPriceLarge,
+  calcSubPriceSmall,
   calcTotalPrice,
   getCountProductsInCart,
 } from "../helpers/cartFunctions";
@@ -70,6 +72,8 @@ const ProductsContextProvider = ({ children }) => {
     let newProduct = {
       item: cardToBasket,
       count: 1,
+      subPriceSmall: 0,
+      subPriceLarge: 0,
       subPrice: 0,
     };
 
@@ -83,7 +87,10 @@ const ProductsContextProvider = ({ children }) => {
     } else {
       productInBasket.cardToBasket.push(newProduct);
     }
-    newProduct.subPrice = calcSubPrice(newProduct);
+    newProduct.subPrice =
+      productInBasket.cardToBasket.subPriceSmall +
+      productInBasket.cardToBasket.subPriceLarge;
+
     productInBasket.totalPrice = calcTotalPrice(productInBasket.cardToBasket);
 
     // productInBasket.cardToBasket.push(newPeoduct);
@@ -114,7 +121,10 @@ const ProductsContextProvider = ({ children }) => {
     cart.products = cart.cardToBasket.map((elem) => {
       if (elem.item.id === id) {
         elem.count = count;
-        elem.subPrice = calcSubPrice(elem);
+        elem.subPriceSmall = calcSubPriceSmall(elem);
+        elem.subPriceLarge = calcSubPriceLarge(elem);
+
+        console.log(elem.priceSmall);
       }
       return elem;
     });

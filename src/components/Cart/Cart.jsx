@@ -4,7 +4,7 @@ import { productsContext } from '../../contexts/ProductsContext';
 import './Cart.css'
 const Cart = () => {
     const {getProductsFromBasket,cart,changeProductCount} = useContext(productsContext)
-
+    console.log(cart.cardToBasket)
     useEffect(()=>{
         getProductsFromBasket()
     },[])
@@ -18,7 +18,10 @@ const Cart = () => {
                     <th>image</th>
                     <th>Title</th>
                     <th>Price</th>
-                    <th>Count</th>
+                    <th>CountSmall</th>
+                    <th>CountLarge</th>
+                    <th>SubPriceSmall</th>
+                    <th>SubPriceLarge</th>
                     <th>SubPrice</th>
                 </tr>
                 </thead>
@@ -27,13 +30,18 @@ const Cart = () => {
 
               <tr key={elem.item.id}>
               <td>
-                <img src={elem.item.image[0]} alt="product img" />
+                <img src={elem.item.image} alt="product img" />
               </td>
               <td>{elem.item.title}</td>
               <td>{elem.item.price}</td>
               <td>
                 <input value={elem.count} type="number" onChange ={(e)=> changeProductCount(e.target.value,elem.item.id)}/>
               </td>
+              <td>
+                <input value={elem.count} type="number" onChange ={(e)=> changeProductCount(e.target.value,elem.item.id)}/>
+              </td>
+              <td>{elem.subPriceSmall}</td>
+              <td>{elem.subPriceLarge}</td>
               <td>{elem.subPrice}</td>
             </tr>
 

@@ -2,9 +2,16 @@ export function getCountProductsInCart() {
   let cart = JSON.parse(localStorage.getItem("Basket"));
   return cart ? cart.cardToBasket.length : 0;
 }
-export function calcSubPrice(product) {
-  return product.count * product.item.price;
+
+export function calcSubPriceSmall(product) {
+  return product.count * product.item.priceSmall;
 }
+export function calcSubPriceLarge(product) {
+  return product.count * product.item.priceSmall;
+}
+// export function calcSubPrice(product) {
+//   return calcSubPriceLarge() + calcSubPriceSmall();
+// }
 export function calcTotalPrice(products) {
   let totalPrice = 0;
   products.forEach((element) => {
