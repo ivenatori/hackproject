@@ -1,7 +1,7 @@
-import { Password } from '@mui/icons-material'
-import React, { useContext } from 'react'
-import { useAuth } from '../../contexts/AuthContext'
-import '../../assets/css/Login.css'
+import { Password } from "@mui/icons-material";
+import React, { useContext } from "react";
+import { useAuth } from "../../contexts/AuthContext";
+import "../../assets/css/Login.css";
 
 const Login = () => {
   const {
@@ -15,7 +15,7 @@ const Login = () => {
     setHasAccount,
     emailError,
     passwordError,
-  } = useAuth()
+  } = useAuth();
 
   return (
     <>
@@ -52,7 +52,7 @@ const Login = () => {
                   Sign In
                 </button>
                 <p className="authP">
-                  Don't have an account?{' '}
+                  Don't have an account?{" "}
                   <span
                     className="authSpan"
                     onClick={() => setHasAccount(!hasAccount)}
@@ -67,12 +67,12 @@ const Login = () => {
                   Sign Up
                 </button>
                 <p className="authP">
-                  Have an account?{' '}
+                  Have an account?{" "}
                   <span
                     className="authSpan"
                     onClick={() => {
-                      console.log(1)
-                      setHasAccount(!hasAccount)
+                      console.log(1);
+                      setHasAccount(!hasAccount);
                     }}
                   >
                     Sign In
@@ -84,7 +84,7 @@ const Login = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
