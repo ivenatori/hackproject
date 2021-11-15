@@ -5,9 +5,12 @@ import { productsContext } from '../../../contexts/ProductsContext';
 import EditProducts from '../../EditProduct/EditProducts';
 import './ProductCard.css'
 import { checkProductInCart } from "../../../helpers/cartFunctions";
+import { useAuth } from '../../../contexts/AuthContext';
 
 const ProductCard = ({elem}) => {
     const {deleteProduct,addToBasket} = useContext(productsContext)
+    const { user } = useAuth();
+    // console.log(email)
     const [priceSize,setPriceSize] = useState(false)
     const [openModal,setOpenModal] = useState(false)
     
@@ -31,7 +34,7 @@ const ProductCard = ({elem}) => {
                 <button onClick={() => addToBasket(elem)} className='btn_to_basket'>в корзину</button>
                 <span className='product_price'>{priceSize?`${elem.priceLarge} с`:`${elem.priceSmall} с`}</span>
                 </div>
-          <div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button><button onClick={()=>setOpenModal(!openModal)}>edit</button></div>
+          {user.email=='erlan@gmail.com'&&<div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button><button onClick={()=>setOpenModal(!openModal)}>edit</button></div>}
         {/* <div><IconButton
               size="large"
               aria-label="show 17 new notifications"
