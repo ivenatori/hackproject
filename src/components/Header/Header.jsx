@@ -182,6 +182,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          <Link to="/" style={{textDecoration: "none", color: "white"}}>
           <Typography
             variant="h6"
             noWrap
@@ -190,6 +191,7 @@ export default function PrimarySearchAppBar() {
           >
             MyImperia
           </Typography>
+          </Link>
           <Search onChange={handleValue} value={searchValue}>
             <SearchIconWrapper>
               <SearchIcon />
@@ -202,7 +204,7 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             
-            <Link to="/cart">
+            <Link to="/cart" style={{color: "white"}}>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
