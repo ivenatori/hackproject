@@ -36,7 +36,7 @@
 }
 .pizza_size {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .pizza_price {
   display: flex;
@@ -76,6 +76,7 @@
   width: 50%;
 }
 .pizza_size button {
+  width: 50%;
   color: rgb(0, 0, 0);
   font-weight: 700;
   text-decoration: none;

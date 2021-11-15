@@ -29,7 +29,7 @@
   margin: 8px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  color: #5A4181;
+  color: #5a4181;
   cursor: pointer;
 }
 
@@ -41,6 +41,17 @@
 
 .paginationActive a {
   color: white;
-  background-color: #5A4181;
-  border: solid 1px #5A4181
+  background-color: #5a4181;
+  border: solid 1px #5a4181;
+}
+.main_titles {
+  text-align: center;
+}
+.main_titles h2 {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #eeff00;
+  text-transform: uppercase;
+  text-shadow: 0 -6px 0 #626903;
 }
