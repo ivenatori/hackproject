@@ -13,7 +13,7 @@ const ProductsList = ({title,title2}) => {
 let filteredProduct = products.filter(elem=>elem.product===title)
 
 
-  const pageCount = Math.ceil(filteredProduct.length / 3)
+  const pageCount = Math.ceil(filteredProduct.length / 4)
 
     useEffect(()=>{
         getProducts()
@@ -21,7 +21,7 @@ let filteredProduct = products.filter(elem=>elem.product===title)
     function changePage({ selected }) {
         setPage(selected)
       }
-      const productsPerPage = 3
+      const productsPerPage = 4
 
       const pageVisited = page * productsPerPage
     
