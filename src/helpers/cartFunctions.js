@@ -4,18 +4,18 @@ export function getCountProductsInCart() {
 }
 
 export function calcSubPriceSmall(product) {
-  return product.count * product.item.priceSmall;
+  return product.countSmall * product.item.priceSmall;
 }
 export function calcSubPriceLarge(product) {
-  return product.count * product.item.priceSmall;
+  return product.countLarge * product.item.priceLarge;
 }
-// export function calcSubPrice(product) {
-//   return calcSubPriceLarge() + calcSubPriceSmall();
-// }
+export function calcSubPrice(product) {
+  return calcSubPriceLarge(product) + calcSubPriceSmall(product);
+}
 export function calcTotalPrice(products) {
   let totalPrice = 0;
   products.forEach((element) => {
-    totalPrice += element.subPrice;
+    totalPrice += element.subPriceSmall + element.subPriceLarge;
   });
   return totalPrice;
 }
