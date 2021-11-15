@@ -10,6 +10,8 @@ import ProductsContextProvider from "./contexts/ProductsContext";
 import Auth from "./components/Auth/Auth";
 import EditProducts from "./components/EditProduct/EditProducts";
 import Filter from "./components/Filter/Filter";
+import ValidationTextFields from "./components/Cart/Cart_form";
+import Cart_form from "./components/Cart/Cart_form";
 import Cart from "./components/Cart/Cart";
 
 const MainRoutes = () => {
@@ -25,6 +27,7 @@ const MainRoutes = () => {
             <Route path="/auth" element={<Auth />} />
             <Route path="/edit" element={<EditProducts />} />
             <Route path="/filter" element={<Filter />} />
+            <Route path="/form" element={<Cart_form/>} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>

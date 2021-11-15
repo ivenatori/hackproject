@@ -1,0 +1,10 @@
+.textField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.knab{
+    display: flex;
+    justify-content: center;
+}
