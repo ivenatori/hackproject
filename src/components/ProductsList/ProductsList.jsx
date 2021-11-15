@@ -5,11 +5,15 @@ import { productsContext } from '../../contexts/ProductsContext';
 import ProductCard from './ProductCard/ProductCard';
 import './ProductList.css'
 
-const ProductsList = () => {
+const ProductsList = ({title,title2}) => {
     const {products,getProducts} = useContext(productsContext)
     const [page, setPage] = useState(0)
 
-  const pageCount = Math.ceil(products.length / 4)
+
+let filteredProduct = products.filter(elem=>elem.product===title)
+
+
+  const pageCount = Math.ceil(filteredProduct.length / 3)
 
     useEffect(()=>{
         getProducts()
@@ -21,15 +25,20 @@ const ProductsList = () => {
 
       const pageVisited = page * productsPerPage
     
-      const displayProducts = products
+      const displayProducts = filteredProduct
         .slice(pageVisited, pageVisited + productsPerPage)
         .map((elem) => <ProductCard key={elem.id} elem={elem} />)
         
 
     return (
+        <>
+       
         <Grid container spacing={2}>
-            <div className='products_list'>
+        
+            <div id={title2} className='products_list'>
+          
             <div className='container'>
+            <h2>{title2}</h2>
                 <div className='flex'>
                 {displayProducts}
                 </div>
@@ -57,6 +66,7 @@ const ProductsList = () => {
             </div>
         </div> */}
         </Grid>
+        </>
     );
 };
 
