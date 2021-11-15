@@ -16,6 +16,7 @@ export default function Cart_form() {
       autoComplete="off"
     >
     <div className="form">
+        <div className="formContainer">
       <div className="textField">
           
         <TextField
@@ -60,6 +61,7 @@ export default function Cart_form() {
       </div>
       <div className="knab">
         <Button variant="contained">Заказать</Button>
+        </div>
         </div>
         </div>
     </Box>

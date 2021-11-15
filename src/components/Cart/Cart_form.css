@@ -8,3 +8,23 @@
     display: flex;
     justify-content: center;
 }
+.form{
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    opacity: 1;
+}
+.formContainer {
+    background-color: rgb(226, 209, 186);
+    padding: 60px;
+    margin: auto;
+    min-width: 380px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    opacity: 1;
+}
