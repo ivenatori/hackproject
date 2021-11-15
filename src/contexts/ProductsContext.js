@@ -120,12 +120,11 @@ const ProductsContextProvider = ({ children }) => {
   function changeSmallProductCount(count, id) {
     let cart = JSON.parse(localStorage.getItem("Basket"));
     cart.products = cart.cardToBasket.map((elem) => {
+      console.log(elem.item);
       if (elem.item.id === id) {
         elem.countSmall = count;
         elem.subPriceSmall = calcSubPriceSmall(elem);
         elem.subPrice = calcSubPrice(elem);
-
-        console.log(elem.priceSmall);
       }
       return elem;
     });
