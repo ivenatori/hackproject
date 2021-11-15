@@ -28,11 +28,11 @@ const ProductCard = ({elem}) => {
             </div>
             
             <div className='pizza_price'>
-                <button className='btn_to_basket'>в корзину</button>
+                <button onClick={() => addToBasket(elem)} className='btn_to_basket'>в корзину</button>
                 <span className='product_price'>{priceSize?`${elem.priceLarge}`:`${elem.priceSmall}`}</span>
                 </div>
           <div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button><button onClick={()=>setOpenModal(!openModal)}>edit</button></div>
-        <div><IconButton
+        {/* <div><IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="secondary"
@@ -43,7 +43,7 @@ const ProductCard = ({elem}) => {
               <AddShoppingCartIcon/>
              
             </IconButton>
-        </div>
+        </div> */}
         </div>
         {openModal&&<EditProducts 
         elem={elem}

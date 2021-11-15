@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import axios from "axios";
 import {
-  // calcSubPrice,
+  calcSubPrice,
   calcSubPriceLarge,
   calcSubPriceSmall,
   calcTotalPrice,
@@ -71,7 +71,8 @@ const ProductsContextProvider = ({ children }) => {
     }
     let newProduct = {
       item: cardToBasket,
-      count: 1,
+      countLarge: 1,
+      countSmall: 1,
       subPriceSmall: 0,
       subPriceLarge: 0,
       subPrice: 0,
@@ -116,13 +117,30 @@ const ProductsContextProvider = ({ children }) => {
     });
   }
 
-  function changeProductCount(count, id) {
+  function changeSmallProductCount(count, id) {
     let cart = JSON.parse(localStorage.getItem("Basket"));
     cart.products = cart.cardToBasket.map((elem) => {
       if (elem.item.id === id) {
-        elem.count = count;
+        elem.countSmall = count;
         elem.subPriceSmall = calcSubPriceSmall(elem);
+        elem.subPrice = calcSubPrice(elem);
+
+        console.log(elem.priceSmall);
+      }
+      return elem;
+    });
+    cart.totalPrice = calcTotalPrice(cart.cardToBasket);
+    localStorage.setItem("Basket", JSON.stringify(cart));
+    getProductsFromBasket();
+  }
+
+  function changeLargeProductCount(count, id) {
+    let cart = JSON.parse(localStorage.getItem("Basket"));
+    cart.products = cart.cardToBasket.map((elem) => {
+      if (elem.item.id === id) {
+        elem.countLarge = count;
         elem.subPriceLarge = calcSubPriceLarge(elem);
+        elem.subPrice = calcSubPrice(elem);
 
         console.log(elem.priceSmall);
       }
@@ -146,7 +164,9 @@ const ProductsContextProvider = ({ children }) => {
         cart: state.cart,
         // cartProducts,
         getProductsFromBasket,
-        changeProductCount,
+        // changeProductCount,
+        changeSmallProductCount,
+        changeLargeProductCount,
       }}
     >
       {children}
