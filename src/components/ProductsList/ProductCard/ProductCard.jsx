@@ -29,7 +29,7 @@ const ProductCard = ({elem}) => {
             
             <div className='pizza_price'>
                 <button onClick={() => addToBasket(elem)} className='btn_to_basket'>в корзину</button>
-                <span className='product_price'>{priceSize?`${elem.priceLarge}`:`${elem.priceSmall}`}</span>
+                <span className='product_price'>{priceSize?`${elem.priceLarge} с`:`${elem.priceSmall} с`}</span>
                 </div>
           <div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button><button onClick={()=>setOpenModal(!openModal)}>edit</button></div>
         {/* <div><IconButton
