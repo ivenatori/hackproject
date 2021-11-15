@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { productsContext } from '../../contexts/ProductsContext';
 import './Cart.css'
 const Cart = () => {
-    const {getProductsFromBasket,cart,changeProductCount} = useContext(productsContext)
+    const {getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
     console.log(cart.cardToBasket)
     useEffect(()=>{
         getProductsFromBasket()
@@ -35,15 +35,15 @@ const Cart = () => {
               <td>{elem.item.title}</td>
               <td>{elem.item.price}</td>
               <td>
-                <input value={elem.count} type="number" onChange ={(e)=> changeProductCount(e.target.value,elem.item.id)}/>
+                <input value={elem.countSmall} type="number" onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
               </td>
               <td>
-                <input value={elem.count} type="number" onChange ={(e)=> changeProductCount(e.target.value,elem.item.id)}/>
+                <input value={elem.countLarge} type="number" onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
               </td>
               <td>{elem.subPriceSmall}</td>
               <td>{elem.subPriceLarge}</td>
               <td>{elem.subPrice}</td>
-            </tr>
+        </tr>
 
                     ))}
                    
