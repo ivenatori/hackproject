@@ -152,7 +152,7 @@ export default function PrimarySearchAppBar() {
           <AddShoppingCartIcon/>
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -171,7 +171,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: '#2E3B55' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -202,6 +202,7 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             
+            <Link to="/cart">
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -211,6 +212,7 @@ export default function PrimarySearchAppBar() {
               <AddShoppingCartIcon/>
               </Badge>
             </IconButton>
+            </Link>
             <IconButton
               size="large"
               edge="end"
