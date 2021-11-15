@@ -106,6 +106,15 @@
       "priceSmall": "50",
       "priceLarge": "100",
       "id": 13
+    },
+    {
+      "product": "pizza",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTrTzujZaKXRA-uVJ5oSmAyNclMcg_TVeBpg&usqp=CAU",
+      "Pname": "Азиатский",
+      "about": "Моцарелла, сладкий перец, томаты, красный лук, фарш из говядины, сушеный перец чили, томатный соус",
+      "priceSmall": "400",
+      "priceLarge": "500",
+      "id": 14
     }
   ]
 }
