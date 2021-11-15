@@ -4,10 +4,10 @@ import { productsContext } from '../../contexts/ProductsContext';
 import './Cart.css'
 const Cart = () => {
     const {getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
-    console.log(cart.cardToBasket)
     useEffect(()=>{
         getProductsFromBasket()
     },[])
+    console.log(cart.cardToBasket)
     return (
         <div className='cart'>
         {cart.cardToBasket?(
@@ -23,6 +23,7 @@ const Cart = () => {
                     <th>SubPriceSmall</th>
                     <th>SubPriceLarge</th>
                     <th>SubPrice</th>
+                    <th>delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,6 +44,7 @@ const Cart = () => {
               <td>{elem.subPriceSmall}</td>
               <td>{elem.subPriceLarge}</td>
               <td>{elem.subPrice}</td>
+              <td><button>Xdd</button></td>
         </tr>
 
                     ))}

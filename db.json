@@ -6,7 +6,8 @@
       "priceSmall": "250",
       "priceLarge": "450",
       "id": 1,
-      "product": "пицца"
+      "product": "пицца",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "Pname": "Четыре сезон",
@@ -15,7 +16,7 @@
       "priceLarge": "350",
       "id": 2,
       "product": "пицца",
-      "image": ""
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "Pname": "tggdf",
@@ -23,7 +24,7 @@
       "priceSmall": "sdfsdf",
       "priceLarge": "dsfvdfv",
       "id": 3,
-      "image": "gdfgd",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU",
       "product": "пицца"
     },
     {
@@ -32,7 +33,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 4
+      "id": 4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "sushi",
@@ -40,7 +42,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.ы",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 5
+      "id": 5,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "роллы",
@@ -48,7 +51,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 6
+      "id": 6,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "роллы",
@@ -56,7 +60,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 7
+      "id": 7,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "роллы",
@@ -64,7 +69,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 8
+      "id": 8,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "роллы",
@@ -72,7 +78,8 @@
       "about": "Представляю Вашему вниманию рецепт приготовления самых простых суши-роллов - маки (норимаки). Данные роллы я рекомендую к приготовлению людям, которые никогда до этого не сворачивали роллы самостоятельно. На мой взгляд, маки - это именно те роллы, с которых надо начинать приготовление данного блюда новичкам.",
       "priceSmall": "400",
       "priceLarge": "600",
-      "id": 9
+      "id": 9,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CBujvGP3Q_bJGiTfffbZaUPi0PzsW8LJ_A&usqp=CAU"
     },
     {
       "product": "sushi",
