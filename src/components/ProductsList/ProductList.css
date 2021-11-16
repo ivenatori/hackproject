@@ -55,3 +55,9 @@
   text-transform: uppercase;
   text-shadow: 0 -6px 0 #626903;
 }
+
+@media all and (max-width: 800px) {
+  .flex {
+    padding-left: 15px;
+  }
+}
