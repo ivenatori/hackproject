@@ -246,14 +246,14 @@ export default function PrimarySearchAppBar() {
                 disableElevation
                 onClick={handleLogOut}
               >
-                Log out
+                Выйти
               </Button>
             </Link>
           ) : null}
           {email ? null : (
             <Link to="/auth">
               <Button variant="contained" disableElevation>
-                Log In
+                Войти
               </Button>
             </Link>
           )}
