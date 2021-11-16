@@ -12,12 +12,17 @@ const EditProducts = ({elem,openModal,setOpenModal}) => {
     setEditedProduct({...editedProduct,id: elem.id})
     // console.log(editedProduct)
     saveEditedProduct(editedProduct,elem.id)
-    // document.querySelector('body').style.overflow='hidden'
+    document.querySelector('body').style.overflow=''
+    }
+
+    function closeBgModal(){
+        setOpenModal(!openModal)
+        document.querySelector('body').style.overflow=''
     }
     return (
         <>
-        <div className='bg_modal' onClick={()=>setOpenModal(!openModal)}></div>
-        <div className='bg_edit_product'>
+        <div className='bg_modal' onClick={closeBgModal}></div>
+        <div className='bg_edit_product' onClick={closeBgModal}>
         <div className='container'>
         <div className='edit_product '>
         <div><input placeholder='выбрать товар' onChange={(e)=>setEditedProduct({...editedProduct,product: e.target.value})} list='data' type="text" />
