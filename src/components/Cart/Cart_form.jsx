@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import "./Cart_form.css"
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 export default function Cart_form() {
   return (
@@ -60,7 +61,7 @@ export default function Cart_form() {
         />
       </div>
       <div className="knab">
-        <Button variant="contained">Заказать</Button>
+        <Link to="/"><Button variant="contained">Заказать</Button></Link>
         </div>
         </div>
         </div>
