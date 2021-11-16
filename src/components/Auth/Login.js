@@ -22,7 +22,7 @@ const Login = () => {
       <section className="login">
         <div className="loginContainer">
           <label htmlFor="" className="authLabel">
-            UserName
+            Почта пользователя
           </label>
           <input
             type="text"
@@ -34,7 +34,7 @@ const Login = () => {
           />
           <p className="errorMsg">{emailError}</p>
           <label htmlFor="" className="authLabel">
-            Password
+            Пароль
           </label>
           <input
             type="password"
@@ -49,25 +49,25 @@ const Login = () => {
             {hasAccount ? (
               <>
                 <button className="authButton" onClick={handleLogIn}>
-                  Sign In
+                  Войти
                 </button>
                 <p className="authP">
-                  Don't have an account?{" "}
+                  Нету аккаунта?{" "}
                   <span
                     className="authSpan"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
-                    Sign Up
+                    Регистрация
                   </span>
                 </p>
               </>
             ) : (
               <>
                 <button className="authButton" onClick={handleSignUp}>
-                  Sign Up
+                 Войти
                 </button>
                 <p className="authP">
-                  Have an account?{" "}
+                  Есть аккаунт?{" "}
                   <span
                     className="authSpan"
                     onClick={() => {
@@ -75,7 +75,7 @@ const Login = () => {
                       setHasAccount(!hasAccount);
                     }}
                   >
-                    Sign In
+                    Войти
                   </span>
                 </p>
               </>

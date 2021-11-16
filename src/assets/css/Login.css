@@ -8,6 +8,7 @@
 .loginContainer {
   background: url('https://images.pexels.com/photos/3887985/pexels-photo-3887985.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
   padding: 60px;
+  padding-top: 25px;
   margin: auto;
   min-width: 380px;
   min-height: 400px;
@@ -72,3 +73,71 @@
   font-size: 16px;
   font-weight: 700;
 }
+@media only screen and (max-width: 1100px) {
+  .loginContainer {
+  margin-top: 20px;
+  padding-top: 20px;
+  min-width: 150px;
+  min-height: 170px;
+  
+  }
+  .authP{
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .loginContainer {
+  padding-top: 20px;
+  min-width: 150px;
+  min-height: 170px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-bottom: 15px;
+  }
+  .authP{
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .loginContainer {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-width: 150px;
+  min-height: 170px;
+  margin-left: 30px;
+  margin-right: 30px;
+  }
+  .authP{
+    margin-top: 15px;
+    font-size: 12px;
+  }
+  .errorMsg{
+    font-size: 12px;
+  }
+  .authLabel{
+    font-size: 14px;
+  }
+  .btnContainer{
+    padding: 20px;
+  }
+  
+}
+/* @media only screen and (max-width: 700px) {
+  .loginContainer {
+  padding-top: 20px;
+  min-width: 200px;
+  min-height: 220px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .loginContainer {
+  padding-top: 20px;
+  min-width: 150px;
+  min-height: 170px;
+  
+  }
+  .authP{
+    margin-top: 15px;
+  }
+} */
