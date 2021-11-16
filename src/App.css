@@ -14,8 +14,9 @@ body {
   box-sizing: border-box;
 }
 .App {
+  min-height: 100vh;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-origin: content-box;
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSJnb8_NX17OvAwimjyj0ZXJaiMhdIIV-VkA&usqp=CAU);
 }
