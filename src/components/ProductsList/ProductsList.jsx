@@ -40,7 +40,7 @@ let filteredProduct = products.filter(elem=>elem.product===title)
             <div className='container'>
                 <div className='main_titles'>
 
-                     <h2>{title2}</h2><hr />
+                     <h2 className='product_title'>{title2}</h2><hr />
                 </div>
                 <div className='flex'>
                 {displayProducts}

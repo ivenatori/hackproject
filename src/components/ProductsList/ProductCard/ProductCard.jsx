@@ -27,10 +27,10 @@ const ProductCard = ({elem}) => {
             <div className='pizza_name'><h2>{elem.Pname}</h2></div>
             <div className='pizza_about'>{elem.about}</div>
             <div className='pizza_size'>
-                <button onClick={(e)=>setPriceSize(true)}
+                <button className='btn_to_basket' onClick={(e)=>setPriceSize(true)}
                 style={{backgroundColor: priceSize?'#fff':''}}
                 >{elem.product==='drinks'?'1.5 л':'large'}</button>
-                <button onClick={(e)=>setPriceSize(false)}
+                <button className='btn_to_basket' onClick={(e)=>setPriceSize(false)}
                 style={{backgroundColor: priceSize?'':'#fff'}}
                 >{elem.product==='drinks'?'1 л':'small'}</button>
             </div>

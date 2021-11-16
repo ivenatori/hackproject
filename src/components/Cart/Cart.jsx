@@ -28,7 +28,7 @@ const Cart = () => {
                 <thead>
                 <tr>
                     <th>image</th>
-                    {/* <th>Title</th> */}
+                    <th>Title</th>
                     {/* <th>Price</th> */}
                     <th>CountSmall</th>
                     <th>CountLarge</th>
@@ -44,7 +44,10 @@ const Cart = () => {
               <tr className='card_cart_tr' key={elem.item.id}>
               <td>
                 <img className='cart_image' src={elem.item.image} alt="product img" />
-                <h2>{elem.item.Pname}</h2>
+                
+              </td>
+              <td>
+              <h2>{elem.item.Pname}</h2>
               </td>
               <td>
                 <input value={elem.countSmall} type="number" onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
@@ -62,8 +65,8 @@ const Cart = () => {
                    
                 </tbody>
             </table>
-            <h4>Total: {cart.totalPrice}</h4>
-           <Link className='btn_buy' to="/form"> <button>Купить</button></Link>
+            <h4 className='total_price'>Total: {cart.totalPrice}</h4>
+           <Link  to="/form"> <button className='btn_buy'>Купить</button></Link>
         </div>
         ):  (<CircularProgress/>)}
     </div>
