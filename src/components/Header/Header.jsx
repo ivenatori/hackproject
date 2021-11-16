@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom'
 import { productsContext } from '../../contexts/ProductsContext'
 import './Header.css'
 import history from '../../helpers/history'
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -65,6 +66,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   const [searchValue, setSearchValue] = React.useState('')
   const { getProducts, cartLength ,getProductsFromBasket} = React.useContext(productsContext)
+
+  const {user} = useAuth()
 
   function handleValue(e) {
     const search = new URLSearchParams(history.location.search)
@@ -143,15 +146,17 @@ export default function PrimarySearchAppBar() {
         
       </MenuItem>
       <MenuItem>
+      <Link to='./cart'>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={cartLength} color="error">
           <AddShoppingCartIcon/>
           </Badge>
         </IconButton>
+        </Link>
         <p>Cart</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -203,7 +208,15 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            
+          {(user.email=='erlan@gmail.com'||user.email=='chingiz@gmail.com' )&&<Link  to="/add" style={{color: "white"}}>
+
+            <IconButton 
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit">
+              <AddBoxIcon/>
+            </IconButton>
+            </Link>}
             <Link to="/cart" style={{color: "white"}}>
             <IconButton
               size="large"

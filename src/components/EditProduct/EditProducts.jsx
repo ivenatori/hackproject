@@ -22,14 +22,14 @@ const EditProducts = ({elem,openModal,setOpenModal}) => {
     return (
         <>
         <div className='bg_modal' onClick={closeBgModal}></div>
-        <div className='bg_edit_product' onClick={closeBgModal}>
+        <div className='bg_edit_product'>
         <div className='container'>
         <div className='edit_product '>
         <div><input placeholder='выбрать товар' onChange={(e)=>setEditedProduct({...editedProduct,product: e.target.value})} list='data' type="text" />
             <datalist id='data'>
                 <option value="pizza"></option>
                 <option value="sushi"></option>
-                <option value="drinks"></option>
+                <option value="drinks"></option>    
                 <option value="sous"></option>
                 <option value=""></option>
                 <option value=""></option>
