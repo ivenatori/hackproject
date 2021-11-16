@@ -18,6 +18,7 @@
     background-color: rgb(226, 209, 186);
     padding: 60px;
     margin: auto;
+    margin-top: 10px;
     min-width: 380px;
     min-height: 400px;
     display: flex;
@@ -28,3 +29,23 @@
     border-radius: 10px;
     opacity: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    .formContainer{
+    margin-top: 10px;
+    padding-top: 10px;
+    min-width: 300px;
+    padding: 40px;
+    padding-bottom: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 370px) {
+    .formContainer{
+    margin-top: 10px;
+    padding-top: 10px;
+    min-width: 300px;
+    padding: 10px;
+    padding-bottom: 10px;
+    }
+  }
