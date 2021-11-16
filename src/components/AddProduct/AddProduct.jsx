@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { productsContext } from '../../contexts/ProductsContext';
 import './AddProduct.css'
+import {Link} from 'react-router-dom'
 
 const AddProduct = () => {
     const {addNewProduct} = useContext(productsContext)
@@ -29,7 +30,7 @@ const AddProduct = () => {
             <div><input onChange={(e)=>setProduct({...product,about: e.target.value})} type="text" /><label>about</label></div>
             <div><input onChange={(e)=>setProduct({...product,priceSmall: e.target.value})} type="text" /><label>price small</label></div>
             <div><input onChange={(e)=>setProduct({...product,priceLarge: e.target.value})} type="text" /><label>price large</label></div>
-            <button className='btn_add' onClick={()=>addProduct()}>add</button>  
+            <Link className='btn_add' to='/'><button onClick={()=>addProduct()}>add</button></Link>
         </div>
         </div>
         </div>
