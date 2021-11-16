@@ -55,7 +55,7 @@ const Cart = () => {
               <td>{elem.subPriceSmall}</td>
               <td>{elem.subPriceLarge}</td>
               <td>{elem.subPrice}</td>
-              <td><button onClick={()=>deleteFromBasket(elem.item.id)}>Xdd</button></td>
+              <td><button className='btn_delete_cart' onClick={()=>deleteFromBasket(elem.item.id)}>X</button></td>
         </tr>
 
                     ))}
@@ -63,7 +63,7 @@ const Cart = () => {
                 </tbody>
             </table>
             <h4>Total: {cart.totalPrice}</h4>
-           <Link to="/form"> <button>Купить</button></Link>
+           <Link className='btn_buy' to="/form"> <button>Купить</button></Link>
         </div>
         ):  (<CircularProgress/>)}
     </div>
