@@ -24,8 +24,7 @@ const Filter = () => {
                             <a href='#роллы'><li>роллы</li></a>
                             <a href='#напитки'><li>напитки</li></a>
                             <a href='#соусы'><li>соусы</li></a>
-                            <li>ntcn</li>
-                            <li>ntct</li>
+                           
                         </ul>
                     </div>
             </div>
