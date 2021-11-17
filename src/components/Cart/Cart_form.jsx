@@ -61,7 +61,7 @@ export default function Cart_form() {
         />
       </div>
       <div className="knab">
-        <Link to="/"><Button variant="contained">Заказать</Button></Link>
+        <Link to="/purchase"><Button variant="contained">Заказать</Button></Link>
         </div>
         </div>
         </div>

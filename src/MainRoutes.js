@@ -14,6 +14,7 @@ import ValidationTextFields from "./components/Cart/Cart_form";
 import Cart_form from "./components/Cart/Cart_form";
 import Cart from "./components/Cart/Cart";
 import HeaderMenu from "./components/Header/HeaderMenu";
+import Purchase from "./components/Cart/Purchase";
 
 const MainRoutes = () => {
   return (
@@ -31,6 +32,8 @@ const MainRoutes = () => {
             <Route path="/form" element={<Cart_form />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/menu" element={<HeaderMenu />} />
+            <Route path="/purchase" element={<Purchase/>} />
+
           </Routes>
         </BrowserRouter>
       </ProductsContextProvider>
