@@ -4,6 +4,7 @@ import React from "react";
 import AddProduct from "../AddProduct/AddProduct";
 import Filter from "../Filter/Filter";
 import ProductsList from "../ProductsList/ProductsList";
+import MainCarousel from '../MainCarousel/MainCarousel';
 
 const Home = () => {
   let style = {
@@ -20,6 +21,7 @@ const Home = () => {
   };
   return (
     <div>
+      <MainCarousel/>
       <Filter />
       <ProductsList ket="pizza" title="pizza" title2="пицца" />
       <ProductsList key="sushi" title="sushi" title2="роллы" />
