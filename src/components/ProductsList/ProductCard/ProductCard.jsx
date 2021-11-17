@@ -39,7 +39,7 @@ const ProductCard = ({elem}) => {
                 <button onClick={() => addToBasket(elem)} className='btn_to_basket'>в корзину</button>
                 <span className='product_price'>{priceSize?`${elem.priceLarge} с`:`${elem.priceSmall} с`}</span>
                 </div>
-          {(user.email=='erlan@gmail.com'||user.email=='chingiz@gmail.com')&&<div><button onClick={(e)=>deleteProduct(elem.id)}>delete</button><button onClick={openModalEdit}>edit</button></div>}
+          {(user.email=='erlan@gmail.com'||user.email=='chingiz@gmail.com')&&<div><button className='btn_delete_card' onClick={(e)=>deleteProduct(elem.id)}>delete</button><button className='btn_delete_card' onClick={openModalEdit}>edit</button></div>}
         {/* <div><IconButton
               size="large"
               aria-label="show 17 new notifications"

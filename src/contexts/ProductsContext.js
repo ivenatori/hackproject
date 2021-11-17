@@ -119,7 +119,7 @@ const ProductsContextProvider = ({ children }) => {
 
   function changeSmallProductCount(count = 0, id) {
     let cart = JSON.parse(localStorage.getItem("Basket"));
-    cart.products = cart.cardToBasket.map((elem) => {
+    cart.cardToBasket = cart.cardToBasket.map((elem) => {
       console.log(elem.item);
       if (elem.item.id === id) {
         elem.countSmall = count;
@@ -135,7 +135,7 @@ const ProductsContextProvider = ({ children }) => {
 
   function changeLargeProductCount(count = 0, id) {
     let cart = JSON.parse(localStorage.getItem("Basket"));
-    cart.products = cart.cardToBasket.map((elem) => {
+    cart.cardToBasket = cart.cardToBasket.map((elem) => {
       if (elem.item.id === id) {
         elem.countLarge = count;
         elem.subPriceLarge = calcSubPriceLarge(elem);
@@ -154,6 +154,7 @@ const ProductsContextProvider = ({ children }) => {
     <productsContext.Provider
       value={{
         products: state.products,
+        dispatch,
         getProducts,
         addNewProduct,
         deleteProduct,

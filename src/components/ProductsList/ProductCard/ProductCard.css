@@ -115,3 +115,13 @@
 .pizza_about {
   padding: 10px;
 }
+.btn_delete_card {
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgb(41, 40, 40);
+  color: #fff;
+}
+.btn_delete_card:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}

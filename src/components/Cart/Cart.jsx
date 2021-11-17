@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { productsContext } from '../../contexts/ProductsContext';
 import './Cart.css'
 const Cart = () => {
-    const {addToBasket,getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
+    const {dispatch,getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
     useEffect(()=>{
         getProductsFromBasket()
     },[])
@@ -15,6 +15,10 @@ const Cart = () => {
         let filteredData = {...data,cardToBasket: data.cardToBasket.filter(elem=>elem.item.id!==id)}
        
         localStorage.setItem('Basket',JSON.stringify(filteredData))
+        dispatch({
+            type: "CHANGE_CARD_COUNT",
+            payload: filteredData.cardToBasket.length,
+          });
         getProductsFromBasket()
     }
 
