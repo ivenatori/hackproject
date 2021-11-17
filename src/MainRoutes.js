@@ -13,6 +13,7 @@ import Filter from "./components/Filter/Filter";
 import ValidationTextFields from "./components/Cart/Cart_form";
 import Cart_form from "./components/Cart/Cart_form";
 import Cart from "./components/Cart/Cart";
+import HeaderMenu from "./components/Header/HeaderMenu";
 
 const MainRoutes = () => {
   return (
@@ -27,8 +28,9 @@ const MainRoutes = () => {
             <Route path="/auth" element={<Auth />} />
             <Route path="/edit" element={<EditProducts />} />
             <Route path="/filter" element={<Filter />} />
-            <Route path="/form" element={<Cart_form/>} />
+            <Route path="/form" element={<Cart_form />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/menu" element={<HeaderMenu />} />
           </Routes>
         </BrowserRouter>
       </ProductsContextProvider>

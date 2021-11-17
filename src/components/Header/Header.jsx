@@ -14,6 +14,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import MoreIcon from '@mui/icons-material/MoreVert';
+
+
 import { useAuth } from '../../contexts/AuthContext'
 import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -103,6 +105,11 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+
+  function openMenu(e){
+   document.getElementById('home').classList.toggle('menu_active')
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -174,6 +181,11 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+// let style={
+//   position: 'sticky',
+//   top: 0,
+// }
+
   return (
     <Box id='header' sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: '#2E3B55' }}>
@@ -184,7 +196,11 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={openMenu} 
           >
+            <div id = 'home' className='home_menu' >
+              <Link to="/"><h2>Home</h2></Link>
+            </div>
             <MenuIcon />
           </IconButton>
           <Link to="/" style={{textDecoration: "none", color: "white"}}>
