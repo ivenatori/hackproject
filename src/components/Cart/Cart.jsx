@@ -20,57 +20,70 @@ const Cart = () => {
 
     // console.log(cart.cardToBasket)
     return (
-    <div className='container'>
-        <div className='cart'>
+<div className='container'>
+    <div className='cart'>
         {cart.cardToBasket?(
         <div>
-            <table className='cart_table'>
-                <thead>
-                <tr>
-                    <th>image</th>
-                    <th>Title</th>
-                    {/* <th>Price</th> */}
-                    <th>CountSmall</th>
-                    <th>CountLarge</th>
-                    <th>small</th>
-                    <th>large</th>
-                    <th>SubPrice</th>
-                    <th>delete</th>
-                </tr>
-                </thead>
-                <tbody className='card_cart'>
+            <div className='cart_table'>
+                {/* <div className='thead'>
+                   <div className='cart_block'>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div className='cart_block'>
+                         <div>CountSmall</div>
+                         <div>CountLarge</div>
+                    </div>
+                    <div className='cart_block'>
+                        <div>small</div>
+                        <div>large</div>
+                        <div>SubPrice</div>
+                        <div>delete</div>
+                    </div>
+                
+                </div> */}
+                <div className='card_cart'>
                     {cart.cardToBasket.map(elem=>(
 
-              <tr className='card_cart_tr' key={elem.item.id}>
-              <td>
-                <img className='cart_image' src={elem.item.image} alt="product img" />
+         <div className='thead' key={elem.item.id}>
+            <div className='cart_block'> 
+                <div className='img-cart'>
+                    <img className='cart_image' src={elem.item.image} alt="product img" />
                 
-              </td>
-              <td>
-              <h2>{elem.item.Pname}</h2>
-              </td>
-              <td>
-                <input value={elem.countSmall} type="number" onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
-              </td>
-              <td>
-                <input value={elem.countLarge} type="number" onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
-              </td>
-              <td>{elem.subPriceSmall}</td>
-              <td>{elem.subPriceLarge}</td>
-              <td>{elem.subPrice}</td>
-              <td><button className='btn_delete_cart' onClick={()=>deleteFromBasket(elem.item.id)}>X</button></td>
-        </tr>
+                </div>
+                <div>
+                    <h2>{elem.item.Pname}</h2>
+                </div>
+            </div>
+            <div className='cart_block'>
+                <div>
+                    <span>count small</span><br />
+                    <input value={elem.countSmall} type="number" onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
+                </div>
+                <div>
+                <span>count large</span><br />
+                     <input value={elem.countLarge} type="number" onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
+                 </div>
+            </div>
+
+            <div className='cart_block'>           
+              <div>{elem.subPriceSmall}  <br /><span>small</span></div>
+              <div>{elem.subPriceLarge}  <br /><span>large</span></div>
+              <div>{elem.subPrice}       <br /><span>sum</span></div>
+              <div><button className='btn_delete_cart' onClick={()=>deleteFromBasket(elem.item.id)}>X</button></div>
+            </div>                
+        </div>
 
                     ))}
                    
-                </tbody>
-            </table>
+                </div>
+            </div>
             <h4 className='total_price'>Total: {cart.totalPrice}</h4>
-           <Link  to="/form"> <button className='btn_buy'>Купить</button></Link>
+           <Link  className='a_buy' to="/form"> <button className='btn_buy'>Купить</button></Link>
         </div>
         ):  (<CircularProgress/>)}
     </div>
-    </div>
+</div>
     
     );
 };
