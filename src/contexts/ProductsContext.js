@@ -111,6 +111,7 @@ const ProductsContextProvider = ({ children }) => {
         totalPrice: 0,
       };
     }
+    // productInBasket.totalPrice = totalPrice;
     dispatch({
       type: "GET_CART",
       payload: productInBasket,

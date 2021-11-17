@@ -3,6 +3,14 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { productsContext } from '../../contexts/ProductsContext';
 import './Cart.css'
+import {
+    calcSubPrice,
+    calcSubPriceLarge,
+    calcSubPriceSmall,
+    calcTotalPrice,
+    getCountProductsInCart,
+  } from "../../helpers/cartFunctions"
+
 const Cart = () => {
     const {dispatch,getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
     useEffect(()=>{
@@ -14,11 +22,14 @@ const Cart = () => {
         console.log(data)
         let filteredData = {...data,cardToBasket: data.cardToBasket.filter(elem=>elem.item.id!==id)}
        
+        filteredData.totalPrice = calcTotalPrice(filteredData.cardToBasket)
+
         localStorage.setItem('Basket',JSON.stringify(filteredData))
         dispatch({
             type: "CHANGE_CARD_COUNT",
             payload: filteredData.cardToBasket.length,
           });
+        // getProducts()
         getProductsFromBasket()
     }
 
@@ -29,23 +40,6 @@ const Cart = () => {
         {cart.cardToBasket?(
         <div>
             <div className='cart_table'>
-                {/* <div className='thead'>
-                   <div className='cart_block'>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className='cart_block'>
-                         <div>CountSmall</div>
-                         <div>CountLarge</div>
-                    </div>
-                    <div className='cart_block'>
-                        <div>small</div>
-                        <div>large</div>
-                        <div>SubPrice</div>
-                        <div>delete</div>
-                    </div>
-                
-                </div> */}
                 <div className='card_cart'>
                     {cart.cardToBasket.map(elem=>(
 
@@ -62,18 +56,18 @@ const Cart = () => {
             <div className='cart_block'>
                 <div>
                     <span>count small</span><br />
-                    <input value={elem.countSmall} type="number" onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
+                    <input value={elem.countSmall} type="number" min='0' onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
                 </div>
                 <div>
                 <span>count large</span><br />
-                     <input value={elem.countLarge} type="number" onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
+                     <input value={elem.countLarge} type="number" min='0' onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
                  </div>
             </div>
 
             <div className='cart_block'>           
-              <div>{elem.subPriceSmall}  <br /><span>small</span></div>
-              <div>{elem.subPriceLarge}  <br /><span>large</span></div>
-              <div>{elem.subPrice}       <br /><span>sum</span></div>
+              <div>{calcSubPriceSmall(elem)}  <br /><span>small</span></div>
+              <div>{calcSubPriceLarge(elem)}  <br /><span>large</span></div>
+              <div>{calcSubPrice(elem)}       <br /><span>sum</span></div>
               <div><button className='btn_delete_cart' onClick={()=>deleteFromBasket(elem.item.id)}>X</button></div>
             </div>                
         </div>
@@ -82,7 +76,7 @@ const Cart = () => {
                    
                 </div>
             </div>
-            <h4 className='total_price'>Total: {cart.totalPrice}</h4>
+            <h4 className='total_price'>Total: {calcTotalPrice(cart.cardToBasket)}</h4>
            <Link  className='a_buy' to="/form"> <button className='btn_buy'>Купить</button></Link>
         </div>
         ):  (<CircularProgress/>)}
