@@ -9,7 +9,7 @@ import { useAuth } from '../../../contexts/AuthContext';
 import LickIcon from '../../../assets/css/lick-product.png'
 
 const ProductCard = ({elem}) => {
-    const {deleteProduct,addToBasket} = useContext(productsContext)
+    const {deleteProduct,addToBasket,addFavorite} = useContext(productsContext)
     const { user } = useAuth();
     // console.log(email)
     const [priceSize,setPriceSize] = useState(false)
@@ -28,7 +28,7 @@ const ProductCard = ({elem}) => {
         <div className='product_card'>
             <div className='pizza_image'>
                  <img className='product_img' src={elem.image} alt="" />
-                 <img className='lick'  src={LickIcon} alt="" srcset=""/>
+                 <img className='lick'  src={LickIcon} alt="" onClick={()=>addFavorite(elem)}/>
             </div>
             
             <div className='pizza_name'><h2>{elem.Pname}</h2></div>
