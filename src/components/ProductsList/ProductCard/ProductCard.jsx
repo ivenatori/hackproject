@@ -6,6 +6,7 @@ import EditProducts from '../../EditProduct/EditProducts';
 import './ProductCard.css'
 import { checkProductInCart } from "../../../helpers/cartFunctions";
 import { useAuth } from '../../../contexts/AuthContext';
+import LickIcon from '../../../assets/css/lick-product.png'
 
 const ProductCard = ({elem}) => {
     const {deleteProduct,addToBasket} = useContext(productsContext)
@@ -19,11 +20,17 @@ const ProductCard = ({elem}) => {
         setOpenModal(!openModal)
         document.querySelector('body').style.overflow='hidden'
     }
+
+
     // console.log(elem)
     return (
         <>
         <div className='product_card'>
-            <div className='pizza_image'><img src={elem.image} alt="" /></div>
+            <div className='pizza_image'>
+                 <img className='product_img' src={elem.image} alt="" />
+                 <img className='lick'  src={LickIcon} alt="" srcset=""/>
+            </div>
+            
             <div className='pizza_name'><h2>{elem.Pname}</h2></div>
             <div className='pizza_about'>{elem.about}</div>
             <div className='pizza_size'>
