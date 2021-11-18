@@ -200,7 +200,11 @@ export default function PrimarySearchAppBar() {
           >
             <div id = 'home' className='home_menu' >
               <Link to="/"><h2>Home</h2></Link>
+              <Link to="./recalls">
+                   Одзывы
+                  </Link>
             </div>
+                
             <MenuIcon />
           </IconButton>
           <Link to="/" style={{textDecoration: "none", color: "white"}}>

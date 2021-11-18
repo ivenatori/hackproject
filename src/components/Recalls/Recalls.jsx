@@ -8,15 +8,21 @@ import UserRecall from './UserRecall';
 const Recalls = () => {
 const {sendRecall,getRecalls,recalls} = useContext(productsContext)
 const [recall,setRecall] = useState('')
+const [recallImage,setRecallImage] = useState('')
 
 const {user} = useAuth()
 console.log(user.email)
 function createRecall(){
+    getRecalls()
     let newRecall={
         user: user.email,
         message: recall,
+        img: recallImage,
     }
     sendRecall(newRecall)
+    
+    setRecall('')
+    setRecallImage('')
     getRecalls()
 }
 useEffect(()=>{
@@ -30,10 +36,12 @@ useEffect(()=>{
                         {recalls.map(elem=>(
                             <UserRecall key={elem.id*8} elem={elem}/>
                         ))}
+                       
                     </div>
                     <div className='send_recalls'>
-                        <input onChange={(e)=>setRecall(e.target.value)} type="text" placeholder='отавить отзыв'/>
-                        <button onClick={createRecall}>отправить</button>
+                        <input value={recall} onChange={(e)=>setRecall(e.target.value)} type="text" placeholder='отавить отзыв'/>
+                        <input value={recallImage} onChange={(e)=>setRecallImage(e.target.value)}type="text" placeholder='вставить изображение' />
+                        <button className='btn-send' onClick={createRecall}>отправить</button>
                     </div>
                 </div>
             </div>
