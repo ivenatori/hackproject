@@ -1,4 +1,5 @@
 import React, {useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Purchase.css'
 
 const Purchase = () => {
@@ -9,6 +10,7 @@ const Purchase = () => {
   return (
     <div className="back">
     <div className="checkout_form">
+      <h1>Введите данные карты</h1>
     <div className="card_number" id="card-container">
       <img className="visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"/>
         <input type="text" maxLength="16" className="input" id="card" placeholder="0000 0000 0000 0000"/> 
@@ -29,9 +31,10 @@ const Purchase = () => {
         </div>
       </div>
     </div>
-    <div className="btn">
+    <Link to="/"> <div className="btn">
       Оплатить
     </div>
+    </Link> 
 </div>
 </div>
     
