@@ -18,7 +18,7 @@
     background-color: rgb(226, 209, 186);
     padding: 60px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     min-width: 380px;
     min-height: 400px;
     display: flex;
@@ -32,20 +32,20 @@
 
 @media only screen and (max-width: 600px) {
     .formContainer{
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-top: 20px;
     min-width: 300px;
-    padding: 40px;
+    padding: 20px;
     padding-bottom: 10px;
     }
   }
 
   @media only screen and (max-width: 370px) {
     .formContainer{
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-top: 30px;
     min-width: 300px;
-    padding: 10px;
+    padding: 20px;
     padding-bottom: 10px;
     }
   }

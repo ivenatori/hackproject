@@ -17,6 +17,7 @@ import HeaderMenu from "./components/Header/HeaderMenu";
 import Purchase from "./components/Cart/Purchase";
 import Favorites from "./components/Favorites/Favorites";
 import Recalls from "./components/Recalls/Recalls";
+import Footer from "./components/Footer/Footer";
 const MainRoutes = () => {
   return (
     <AuthContextProvider>
@@ -39,6 +40,7 @@ const MainRoutes = () => {
           </Routes>
         </BrowserRouter>
       </ProductsContextProvider>
+      <Footer/>
     </AuthContextProvider>
   );
 };
