@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import './Purchase.css'
 
 const Purchase = () => {
-  const [tagInputVal, setTagInputVal] = useState("");
-  function onChangeTagInput(e) {
-    setTagInputVal(e.target.value.replace(/[^a-zA-Z\d]/ig, ""));
-  }
   return (
     <div className="back">
     <div className="checkout_form">
