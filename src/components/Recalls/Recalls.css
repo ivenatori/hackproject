@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+.recalls_content {
+  width: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+.users_recalls {
+  width: 100%;
+  max-height: 400px;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  box-sizing: border-box;
+}
+.user_message {
+  color: rgb(255, 196, 0);
+}
+.user {
+  color: rgb(0, 250, 0);
+}
