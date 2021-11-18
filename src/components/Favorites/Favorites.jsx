@@ -22,9 +22,11 @@ const Favorites = () => {
         <div className='container'>
             <div style={h1Style}><h1>Избранные</h1></div>
             <div className='favorites-flex'>
-            {favorites.map(elem=>(
+                {favorites?(
+            favorites.map(elem=>(
                 <ProductCard key={elem.id+1000} elem={elem}/>
-            ))}
+            ))
+                ):'ИЗБРАННЫХ НЕТ'}
             </div>
         </div>
         </div>

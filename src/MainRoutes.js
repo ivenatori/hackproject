@@ -16,6 +16,7 @@ import Cart from "./components/Cart/Cart";
 import HeaderMenu from "./components/Header/HeaderMenu";
 import Purchase from "./components/Cart/Purchase";
 import Favorites from "./components/Favorites/Favorites";
+import Recalls from "./components/Recalls/Recalls";
 const MainRoutes = () => {
   return (
     <AuthContextProvider>
@@ -34,6 +35,7 @@ const MainRoutes = () => {
             <Route path="/menu" element={<HeaderMenu />} />
             <Route path="/purchase" element={<Purchase />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/recalls" element={<Recalls />} />
           </Routes>
         </BrowserRouter>
       </ProductsContextProvider>

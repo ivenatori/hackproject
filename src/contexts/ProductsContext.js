@@ -16,6 +16,7 @@ const INIT_STATE = {
   cartLength: getCountProductsInCart(),
   cart: {},
   favorites: [],
+  recalls: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -28,6 +29,8 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, cart: action.payload };
     case "GET_FAVORITES":
       return { ...state, favorites: action.payload };
+    case "GET_RECALLS":
+      return { ...state, recalls: action.payload };
     default:
       return state;
   }
@@ -184,6 +187,20 @@ const ProductsContextProvider = ({ children }) => {
 
     getFavorites();
   }
+  //recalls
+
+  async function getRecalls() {
+    let { data } = await axios("http://localhost:8000/recalls");
+
+    dispatch({
+      type: "GET_RECALLS",
+      payload: data,
+    });
+  }
+
+  function sendRecall(recall) {
+    axios.post(`http://localhost:8000/recalls`, recall);
+  }
   return (
     <productsContext.Provider
       value={{
@@ -202,6 +219,9 @@ const ProductsContextProvider = ({ children }) => {
         changeSmallProductCount,
         changeLargeProductCount,
         getFavorites,
+        getRecalls,
+        sendRecall,
+        recalls: state.recalls,
       }}
     >
       {children}
