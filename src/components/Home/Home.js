@@ -7,7 +7,7 @@ import ProductsList from "../ProductsList/ProductsList";
 import MainCarousel from "../MainCarousel/MainCarousel";
 import { Link } from "react-router-dom";
 import Favorites from "../../assets/css/favorites.png";
-import shadows from "@mui/material/styles/shadows";
+import "./Home.css";
 
 const Home = () => {
   let style = {
@@ -37,6 +37,21 @@ const Home = () => {
     "box-shadow": "1px 1px 30px #fff",
     "border-radius": "50%",
   };
+
+  let showRecolls = {
+    width: "300px",
+    height: "70px",
+    position: "fixed",
+    bottom: "0",
+    right: "0",
+    backgroundColor: "rgba(0,0,0,.4)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#fff",
+    borderRadius: "30px",
+    textDecoration: "none",
+  };
   return (
     <div>
       <MainCarousel />
@@ -50,6 +65,9 @@ const Home = () => {
       </a>
       <Link style={styles} to="/favorites">
         <img style={imgStyle} width="70px" height="60px" src={Favorites}></img>
+      </Link>
+      <Link className="recolls-btn" style={showRecolls} to="./recalls">
+        Отзывы
       </Link>
     </div>
   );
