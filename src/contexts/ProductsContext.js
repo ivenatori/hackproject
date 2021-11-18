@@ -7,7 +7,7 @@ import {
   calcTotalPrice,
   getCountProductsInCart,
 } from "../helpers/cartFunctions";
-
+import { useAuth } from "./AuthContext";
 export const productsContext = createContext();
 
 const INIT_STATE = {
@@ -15,6 +15,7 @@ const INIT_STATE = {
   currentProduct: {},
   cartLength: getCountProductsInCart(),
   cart: {},
+  users: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -25,7 +26,8 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, cartLength: action.payload };
     case "GET_CART":
       return { ...state, cart: action.payload };
-
+    case "GET_FAVORITES":
+      return { ...state, favorites: action.payload };
     default:
       return state;
   }
@@ -33,6 +35,7 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const { email } = useAuth();
 
   const getProducts = async (params = "") => {
     const { data } = await axios(`http://localhost:8000/products?${params}`);
@@ -151,6 +154,31 @@ const ProductsContextProvider = ({ children }) => {
     getProductsFromBasket();
   }
 
+  //favorite
+
+  // async function getFavorite() {
+  //   let { data } = await axios(`http://localhost:8000/users`);
+  //   dispatch({
+  //     type: "GET_VAVORITES",
+  //     payload: data,
+  //   });
+  // }
+  // function addFavorite(fav, email) {
+  //   if (email && state.users === []) {
+  //     let newFavorite = {
+  //       userName: email,
+  //       favorites: [],
+  //     };
+  //     axios.post(`http://localhost:8000/users`, newFavorite);
+  //     getFavorite();
+  //   }
+  //   // state.users.favorites.forEach((elem) => {
+  //   //   if (elem.id === fav.id) {
+  //     state.users.favorites.push(fav);
+  //   } else return;
+  // });
+  // axios.patch(`http://localhost:8000/users`, state.users);
+  // }
   return (
     <productsContext.Provider
       value={{
@@ -163,11 +191,12 @@ const ProductsContextProvider = ({ children }) => {
         addToBasket,
         cartLength: state.cartLength,
         cart: state.cart,
-        // cartProducts,
+        // addFavorite,
         getProductsFromBasket,
         // changeProductCount,
         changeSmallProductCount,
         changeLargeProductCount,
+        // getFavorite,
       }}
     >
       {children}
