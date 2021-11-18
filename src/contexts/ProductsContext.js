@@ -15,7 +15,7 @@ const INIT_STATE = {
   currentProduct: {},
   cartLength: getCountProductsInCart(),
   cart: {},
-  users: [],
+  favorites: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -64,48 +64,6 @@ const ProductsContextProvider = ({ children }) => {
 
   // Cart// Basket
 
-  function addToBasket(cardToBasket) {
-    let productInBasket = JSON.parse(localStorage.getItem("Basket"));
-    if (!productInBasket) {
-      productInBasket = {
-        cardToBasket: [],
-        totalPrice: 0,
-      };
-    }
-    let newProduct = {
-      item: cardToBasket,
-      countLarge: 1,
-      countSmall: 1,
-      subPriceSmall: 0,
-      subPriceLarge: 0,
-      subPrice: 0,
-    };
-
-    let filteredCard = productInBasket.cardToBasket.filter(
-      (elem) => elem.item.id === cardToBasket.id
-    );
-    if (filteredCard.length > 0) {
-      productInBasket.cardToBasket.filter(
-        (elem) => elem.item.id !== cardToBasket.id
-      );
-    } else {
-      productInBasket.cardToBasket.push(newProduct);
-    }
-    newProduct.subPrice =
-      productInBasket.cardToBasket.subPriceSmall +
-      productInBasket.cardToBasket.subPriceLarge;
-
-    productInBasket.totalPrice = calcTotalPrice(productInBasket.cardToBasket);
-
-    // productInBasket.cardToBasket.push(newPeoduct);
-    localStorage.setItem("Basket", JSON.stringify(productInBasket));
-
-    dispatch({
-      type: "CHANGE_CARD_COUNT",
-      payload: productInBasket.cardToBasket.length,
-    });
-  }
-
   function getProductsFromBasket() {
     let productInBasket = JSON.parse(localStorage.getItem("Basket"));
     if (!productInBasket) {
@@ -119,6 +77,51 @@ const ProductsContextProvider = ({ children }) => {
       type: "GET_CART",
       payload: productInBasket,
     });
+  }
+
+  function addToBasket(cardToBasket) {
+    let productInBasket = JSON.parse(localStorage.getItem("Basket"));
+    if (!productInBasket) {
+      productInBasket = {
+        cardToBasket: [],
+        totalPrice: 0,
+      };
+    }
+    let newProduct = {
+      item: cardToBasket,
+      countLarge: 1,
+      countSmall: 1,
+      subPriceSmall: +cardToBasket.priceLarge,
+      subPriceLarge: +cardToBasket.priceSmall,
+      subPrice: 0,
+    };
+
+    let filteredCard = productInBasket.cardToBasket.filter(
+      (elem) => elem.item.id === cardToBasket.id
+    );
+    if (filteredCard.length > 0) {
+      productInBasket.cardToBasket.filter(
+        (elem) => elem.item.id !== cardToBasket.id
+      );
+    } else {
+      productInBasket.cardToBasket.push(newProduct);
+    }
+
+    newProduct.subPrice =
+      productInBasket.cardToBasket.subPriceSmall +
+      productInBasket.cardToBasket.subPriceLarge;
+
+    productInBasket.totalPrice = calcTotalPrice(productInBasket.cardToBasket);
+
+    // productInBasket.cardToBasket.push(newPeoduct);
+    localStorage.setItem("Basket", JSON.stringify(productInBasket));
+
+    dispatch({
+      type: "CHANGE_CARD_COUNT",
+      payload: productInBasket.cardToBasket.length,
+    });
+
+    getProductsFromBasket();
   }
 
   function changeSmallProductCount(count = 0, id) {
@@ -154,31 +157,33 @@ const ProductsContextProvider = ({ children }) => {
     getProductsFromBasket();
   }
 
-  //favorite
+  // favorite
 
-  // async function getFavorite() {
-  //   let { data } = await axios(`http://localhost:8000/users`);
-  //   dispatch({
-  //     type: "GET_VAVORITES",
-  //     payload: data,
-  //   });
-  // }
-  // function addFavorite(fav, email) {
-  //   if (email && state.users === []) {
-  //     let newFavorite = {
-  //       userName: email,
-  //       favorites: [],
-  //     };
-  //     axios.post(`http://localhost:8000/users`, newFavorite);
-  //     getFavorite();
-  //   }
-  //   // state.users.favorites.forEach((elem) => {
-  //   //   if (elem.id === fav.id) {
-  //     state.users.favorites.push(fav);
-  //   } else return;
-  // });
-  // axios.patch(`http://localhost:8000/users`, state.users);
-  // }
+  function getFavorites() {
+    let data = JSON.parse(localStorage.getItem("favorites"));
+
+    dispatch({
+      type: "GET_FAVORITES",
+      payload: data,
+    });
+  }
+
+  function addFavorite(item) {
+    if (
+      !JSON.parse(localStorage.getItem("favorites")) &&
+      JSON.parse(localStorage.getItem("favorites")) !== []
+    ) {
+      localStorage.setItem("favorites", JSON.stringify([]));
+    }
+    let data = JSON.parse(localStorage.getItem("favorites"));
+
+    let newData = data.filter((elem) => elem.id !== item.id);
+    console.log(data);
+    newData.push(item);
+    localStorage.setItem("favorites", JSON.stringify(newData));
+
+    getFavorites();
+  }
   return (
     <productsContext.Provider
       value={{
@@ -191,12 +196,12 @@ const ProductsContextProvider = ({ children }) => {
         addToBasket,
         cartLength: state.cartLength,
         cart: state.cart,
-        // addFavorite,
+        addFavorite,
         getProductsFromBasket,
-        // changeProductCount,
+        favorites: state.favorites,
         changeSmallProductCount,
         changeLargeProductCount,
-        // getFavorite,
+        getFavorites,
       }}
     >
       {children}
