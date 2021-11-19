@@ -15,7 +15,7 @@ const Cart = () => {
     const {dispatch,getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
     useEffect(()=>{
         getProductsFromBasket()
-    },[cart])
+    },[])
 
     function deleteFromBasket (id){
         let data = JSON.parse(localStorage.getItem('Basket'))
@@ -56,11 +56,11 @@ const Cart = () => {
             <div className='cart_block'>
                 <div>
                     <span>count small</span><br />
-                    <input type="number" min='0' onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
+                    <input  type="number" min='0' onChange ={(e)=> changeSmallProductCount(e.target.value,elem.item.id)}/>
                 </div>
                 <div>
                 <span>count large</span><br />
-                     <input value={elem.countLarge} type="number" min='0' onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
+                     <input type="number" min='0' onChange ={(e)=> changeLargeProductCount(e.target.value,elem.item.id)}/>
                  </div>
             </div>
 
