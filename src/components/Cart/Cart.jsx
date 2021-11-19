@@ -15,7 +15,7 @@ const Cart = () => {
     const {dispatch,getProductsFromBasket,cart,changeLargeProductCount,changeSmallProductCount} = useContext(productsContext)
     useEffect(()=>{
         getProductsFromBasket()
-    },[cart])
+    },[])
 
     function deleteFromBasket (id){
         let data = JSON.parse(localStorage.getItem('Basket'))
